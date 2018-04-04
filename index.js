@@ -99,6 +99,7 @@ class CameraRollPicker extends Component {
       emptyText,
       emptyTextStyle,
       loader,
+      testID
     } = this.props;
 
     if (this.state.initialLoading) {
@@ -112,6 +113,7 @@ class CameraRollPicker extends Component {
     var listViewOrEmptyText = dataSource.getRowCount() > 0 ? (
       <ListView
         style={{flex: 1,}}
+        testID={testID}
         scrollRenderAheadDistance={scrollRenderAheadDistance}
         initialListSize={initialListSize}
         pageSize={pageSize}
@@ -292,6 +294,7 @@ CameraRollPicker.propTypes = {
   emptyText: PropTypes.string,
   emptyTextStyle: Text.propTypes.style,
   loader: PropTypes.node,
+  testID: PropTypes.string,
 }
 
 CameraRollPicker.defaultProps = {
@@ -312,6 +315,7 @@ CameraRollPicker.defaultProps = {
     console.log(selectedImages);
   },
   emptyText: 'No photos.',
+  testID: null
 }
 
 export default CameraRollPicker;
